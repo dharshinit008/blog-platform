@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BlogSpace | Share Your Stories</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>BlogSpace ✍️</h1>
+
+        <nav>
+            <button onclick="showSection('home')">Home</button>
+            <button onclick="showSection('login')">Login</button>
+            <button onclick="showSection('register')">Register</button>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <h2>Welcome to BlogSpace!</h2>
+
+                <p>Share your thoughts, stories, and ideas with the world.</p>
+
+                <button onclick="showSection('register')">
+                    Start Blogging
+                </button>
+            </div>
+
+            <h2>Latest Blog Posts</h2>
+
+            <div id="blogList">
+                <p>Loading blog posts...</p>
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="register" class="section">
+            <div class="form-box">
+
+                <h2>Create Account</h2>
+
+                <form id="registerForm">
+
+                    <input
+                        type="text"
+                        id="registerName"
+                        placeholder="Your Name"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="Email Address"
+                        required
+                    >
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Password (minimum 8 characters)"
+                        minlength="8"
+                        required
+                    >
+
+                    <button type="submit">Register</button>
+
+                </form>
+
+                <p id="registerMessage" class="message"></p>
+
+                <p>
+                    Already have an account?
+                    <a href="#" onclick="showSection('login')">Login</a>
+                </p>
+
+            </div>
+        </section>
+
+        <!-- Login Section -->
+        <section id="login" class="section">
+            <div class="form-box">
+
+                <h2>Welcome Back!</h2>
+
+                <form id="loginForm">
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Email Address"
+                        required
+                    >
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Password"
+                        required
+                    >
+
+                    <button type="submit">Login</button>
+
+                </form>
+
+                <p id="loginMessage" class="message"></p>
+
+                <p>
+                    Don't have an account?
+                    <a href="#" onclick="showSection('register')">
+                        Register
+                    </a>
+                </p>
+
+            </div>
+        </section>
+
+        <!-- Create Blog Section -->
+        <section id="createBlog" class="section">
+
+            <div class="form-box">
+
+                <h2>Create a Blog Post</h2>
+
+                <form id="blogForm">
+
+                    <input
+                        type="text"
+                        id="blogTitle"
+                        placeholder="Blog Title"
+                        required
+                    >
+
+                    <textarea
+                        id="blogContent"
+                        placeholder="Write your story..."
+                        rows="7"
+                        required
+                    ></textarea>
+
+                    <button type="submit">Publish Blog</button>
+
+                </form>
+
+                <p id="blogMessage" class="message"></p>
+
+            </div>
+
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section">
+
+            <h2 id="welcomeUser">My Dashboard</h2>
+
+            <button onclick="showSection('createBlog')">
+                + Create New Blog
+            </button>
+
+            <button onclick="logout()">Logout</button>
+
+            <h3>My Blog Posts</h3>
+
+            <div id="myBlogs"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 BlogSpace | Built with ❤️</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
